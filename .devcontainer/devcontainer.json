@@ -35,12 +35,24 @@
 		"ms-python.python",
 		"ms-python.vscode-pylance"
 	],
+	
+	"containerEnv": {
+		"IOTHUB_DEVICE_SECURITY_TYPE":"DPS" ,
+		"IOTHUB_DEVICE_DPS_ID_SCOPE":"0ne00BC9991" ,
+		"IOTHUB_DEVICE_DPS_DEVICE_ID":"my-pnp-device" ,
+		"IOTHUB_DEVICE_DPS_DEVICE_KEY":"pnl068CrlNWwldEPyp/53u+dUWbPBZJBpmLe5A436R4=" ,
+		"IOTHUB_DEVICE_DPS_ENDPOINT":"global.azure-devices-provisioning.net",
+		"IOTHUB_METHOD_NAME":"getMaxMinReport" ,
+		"IOTHUB_METHOD_PAYLOAD":"hello world"
+		// "IOTHUB_CONNECTION_STRING";"https%3A%2F%2F%2Fglobal.azure-devices-provisioning.net&sig=Z2v7IZLM31lnPbYHWy1DNw%252F8JLyKZACw0UGtxOIY36Q%253D&se=1739932829&skn=registration",
+		// "IOTHUB_DEVICE_ID":"my-pnp-device"
+    },
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install azure-iot-device && pip3 install azure-storage-blob",
+	"postCreateCommand": "pip install --upgrade pip && pip3 install azure-iot-device && pip3 install azure-storage-blob",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
